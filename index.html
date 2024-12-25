@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DTF newyear CARD</title>
+  <title>DTF New Year Card</title>
   <!-- MindAR Library -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -12,10 +12,12 @@
   <a-scene mindar-image="imageTargetSrc: https://dreamtofly-dtf.github.io/newyear-card/newyear.mind; filterMinCF:0.1; filterBeta: 10; warmupTolerance: 1; missTolerance: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
     <a-assets>
       <!-- Images -->
-     
 
       <!-- GLTF Model -->
-      <a-asset-item id="gltfModel" src="https://dreamtofly-dtf.github.io/website/assets/scene (1).gltf"></a-asset-item>
+      <a-asset-item id="gltfModel" src="https://dreamtofly-dtf.github.io/newyear-card/newyearcard.gltf"></a-asset-item>
+
+      <!-- Video -->
+      <video id="videoPlayback" src="https://dreamtofly-dtf.github.io/newyear-card/vedioplayback.mp4" loop muted="true" playsinline="true" crossorigin="anonymous"></video>
     </a-assets>
 
     <!-- Camera for MindAR -->
@@ -25,6 +27,9 @@
     <a-entity mindar-image-target="targetIndex: 0">
       <!-- GLTF Model Entity -->
       <a-gltf-model src="#gltfModel" position="0 0 0" scale="1 1 1" rotation="90 0 0"></a-gltf-model>
+
+      <!-- Video Entity -->
+      <a-video src="#videoPlayback" position="0 -1 -1" scale="2 1 1" rotation="0 0 0"></a-video>
     </a-entity>
   </a-scene>
 </body>
